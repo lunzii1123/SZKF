@@ -4,10 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
-public class Trainers {
+public class Trainer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,6 @@ public class Trainers {
     String secondName;
     @Getter @Setter
     String description;
-    @OneToMany(mappedBy = "trainers")
-    private Set<Client> clientSet;
+    @OneToMany(mappedBy = "trainer")
+    private List<Client> clientList;
 }
